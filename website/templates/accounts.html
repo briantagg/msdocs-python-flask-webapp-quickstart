@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+  
+<article class="media content-section">
+    <div class="media-body"><br>
+        <div class="dg">
+            <h2>Accounts Overview</h2>   
+            <div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                  <div class="toast-body">
+                    Hello, world! This is a toast message.
+                  </div>
+                  <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+              </div>   
+            <table>
+                <tr>
+                    <td>
+                        <div class="card" style="width: 18rem;">
+                            <img src="../static/images/current_account_card.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h3 class="card-title">Current</h3>
+                            <h5 class="card-title">(****-*784)</h5>
+                            <p class="card-text">£ {{ current_account_total }}</p>
+                            <a href="{{ url_for('views.current') }}" class="btn btn-primary">View Account Transactions</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td>       
+                        <div class="card" style="width: 18rem;">
+                            <img src="../static/images/savings_account_card.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h3 class="card-title">Savings</h3>
+                            <h5 class="card-title">(****-*144)</h5>
+                            <p class="card-text">£ {{ savings_account_total }}</p>
+                            <a href="{{ url_for('views.savings') }}" class="btn btn-primary">View Savings Transactions</a>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="card" style="width: 18rem;">
+                            <img src="../static/images/investment_account_card.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h3 class="card-title">Investments</h3>
+                            <h5 class="card-title">(****-*669)</h5>
+                            <p class="card-text">£ {{ investments_account_total }}</p>
+                            <a href="{{ url_for('views.investments') }}" class="btn btn-primary">View Investment Transactions</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</article><br>
+<article class="media content-section">
+    <div class="media-body">
+        <h4>Perform an Action</h4>
+        <table border="0" width=700>
+            <tr>
+                <td width=350><p>I would like to...</p>
+                    <p><a href="{{ url_for('actions.transfer') }}">Transfer Funds Between My Accounts</a></p>
+                    <p><a href="{{ url_for('actions.pay') }}">Pay a Bill, Business or Somebody</a></p>
+                    <p><a href="{{ url_for('actions.payees') }}">Manage My Payees List</a></p>
+                </td>
+                <td rowspan="2" align="center"><img class="rounded float-left" src="static\images\accounts.jpg" width=300></td>
+            </tr>
+            <tr>
+                <td><p>Or...</p>
+                    <p><a href="{{ url_for('views.mortgages_apply') }}">Apply for a Mortgage</a></p>
+                    <p><a href="{{ url_for('views.loans_apply') }}">Apply for a Loan</a></p>
+                    <p><a href="{{ url_for('views.credit_apply') }}">Apply for a Credit Card</a></p>
+                    <p><a href="{{ url_for('views.business_apply') }}">Apply for a Business Account</a></p>
+                </td>
+            </tr>
+        </table>
+
+
+    </div>
+</article>
+
+{% endblock content %}

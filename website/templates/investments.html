@@ -1,0 +1,37 @@
+
+{% extends "base.html" %}
+{% block content %}
+  
+    <article class="media content-section">
+        <div class="media-body">
+            <h1>Account Transactions</h1>
+            <h4>Investment Account (****-*669)</h4>
+            <p>Current Balance: £ {{ investments_account_total }}</p>
+            <a href="{{ url_for('views.accounts') }}">Return to Account Summary</a>
+            <br><br>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Date</td>
+                        <th scope="col">Type</td>
+                        <th scope="col">Reference</td>
+                        <th scope="col">Amount</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for post in data['investments_account'] %}
+                    <tr> 
+                        <td> {{ post['Date'] }} </td>
+                        <td> {{ post['Type'] }} </td>
+                        <td> {{ post['ID'] }} </td>
+                        <td>£{{ post['Amount'] }} </td>
+                    {% endfor %}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+    <div class="content-section">
+        <a href="{{ url_for('views.accounts') }}">Return to Account Summary</a>
+    </div>
+{% endblock %}

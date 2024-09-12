@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<article class="media content-section">
+  <div class="media-body"><br>
+    <h1>About Hemm & May</h1>
+    <h4>Our Business, Broken Down.</h4><br>
+    <p>The first institutions that took on the storage of money and valuables, were the temples.</p><br>
+      <img class="rounded float-left" src="static\images\about.jpg" width=700><br><br>
+      
+      <p>For example, the inhabitants of ancient Athens kept their savings in the temples of the Acropolis and<br> the medieval 
+      Europeans often save money in the monasteries. The word “Bank” is of Italian origin.</p><br>
+      <img class="rounded float-right" src="static\images\meeting.jpg" width=700><br>
+    <p>&nbsp;</p>
+    <p>Now do your thing is our new brand direction and our first global tagline. It articulates our purpose <br>
+      and our promise to make banking frictionless. <br><br><br>Its about encouraging people to do more of the things 
+      that move them and their business. do your <br>thing is not about irresponsible behaviour but about people 
+      being free to live the life they want to <br>live, knowing that they will make their world a little better for it.</p><br>
+  </div>
+</article>
+<div class="content-section">
+  <a href="{{ url_for('views.home') }}">Return to Homepage</a>
+</div>
+<br><br>
+{% endblock content %}

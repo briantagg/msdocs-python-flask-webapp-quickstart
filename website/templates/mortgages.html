@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="media content-section">
+  <div class="media-body">
+    <h2>Welcome to Hemm & May Mortgages</h2><br>
+    <img class="rounded" src="static\images\mortgage.jpg" width=700>
+    <p>&nbsp;</p>
+    <h3>Apply for a Mortgage</h3>
+    <p class='text-muted'>We pride ourselves on providing a large range of online financial services for all your needs.</p>
+    <br>
+    <h4>Click <a href="{{ url_for('actions.mortgages_apply') }}">here</a> to start the Mortgage application process.</h4><br><br>
+  </div>
+</article>
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="media content-section">
+  <div class="media-body"><br>
+    <h2>Welcome to Hemm & May Credit Cards</h2><br>
+    <img class="rounded" src="static\images\credit.jpg" width=700>
+    <br><br><br>
+    <h3>Need a Credit Card for your purchasing needs?</h3>
+    <p class='text-muted'>We pride ourselves on providing a large range of online financial services for all your needs.</p>
+    <br>
+    <h4>Click <a href="{{ url_for('actions.credit_apply') }}">here</a> to apply for a Credit Card.</h4><br><br>
+  </div>
+</article>
+{% endblock content %}

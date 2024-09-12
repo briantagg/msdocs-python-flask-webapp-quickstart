@@ -1,0 +1,49 @@
+
+{% extends "base.html" %}
+{% block content %}
+
+<article class="media content-section">
+    <div class="media-body"><br>
+        <h1>Account Transactions</h1>
+        <h4>Current Account     (****-*784)</h4>
+        <p>Current Balance: £ {{ current_account_total }}</p>
+        <a href="{{ url_for('views.accounts') }}">Return to Account Summary</a>
+        <br><br>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Date</td>
+                    <th scope="col">Type</td>
+                    <th scope="col">Reference</td>
+                    <th scope="col">Amount</td>
+            </tr>
+            </thead>
+            <tbody>
+                {% for post in data['current_account'] %}
+                <tr> 
+                    <td> {{ post['Date'] }} </td>
+                    <td> {{ post['Type'] }} </td>
+                    <td> {{ post['ID'] }} </td>
+                    <td>£{{ post['Amount'] }} </td>
+                {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+    
+        
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+</article>
+
+<div class="content-section">
+    <a href="{{ url_for('views.accounts') }}">Return to Account Summary</a>
+</div>
+{% endblock %}

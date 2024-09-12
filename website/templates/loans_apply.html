@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="media content-section">
+  <div class="media-body">
+    <h2>Welcome to Hemm & May Loans</h2><br>
+    <img class="rounded" src="static\images\loans.jpg" width=700>
+    <p>&nbsp;</p>
+    <h3>Need a loan for something important?</h3>
+    <p class='text-muted'>We pride ourselves on providing a large range of online financial services for all your needs.</p>
+    
+    <h4>Give us some details for your loan application:</h4><br><br>
+    <form action="loans_apply" method = "POST">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Email</label>
+          <input type="email" class="form-control" id="inputEmail4" placeholder="yourname@anywhere.com">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Password</label>
+          <input type="password" class="form-control" id="inputPassword4" placeholder="password">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputAddress">Address Line 1</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="123 Main Avenue">
+      </div>
+      <div class="form-group">
+        <label for="inputAddress2">Address Line 2</label>
+        <input type="text" class="form-control" id="inputAddress2" placeholder="District or Borough">
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputCity">City</label>
+          <input type="text" class="form-control" id="inputCity" placeholder="Paris, London">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputZip">Postal Code</label>
+          <input type="text" class="form-control" id="inputZip">
+        </div>
+        <div class="form-group col-md-2">
+
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            I have credit already with Hemm & May
+          </label>
+        </div>
+      </div>
+      <br>
+      <button type="submit" class="btn btn-primary">Make application for Loan</button>
+    </form>
+    <br>
+  </div>
+</article>
+<div class="content-section">
+  <a href="{{ url_for('views.home') }}">Return to Main Page</a><br><br>
+</div>
+{% endblock content %}

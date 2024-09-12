@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="media content-section">
+  <div class="media-body"><br>
+    <h2>Welcome to Hemm & May Business</h2><br>
+    <img class="rounded" src="static\images\business.jpg" width=700>
+    <p>&nbsp;</p>
+    <h3>Starting a new business?</h3>
+    <p class='text-muted'>We pride ourselves on providing a large range of online financial services for all your needs.</p>
+    <br>
+    <h4>Click <a href="{{ url_for('actions.business_apply') }}">here</a> to apply for a Business Account.</h4><br><br>
+  </div>
+</article>
+{% endblock content %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="content-section">
+        <h2>My Profile</h2>
+        <table>
+            <tr>
+                <td width=350><img width=300 src="static\images\edit_profile.jpg"></td>
+                <td><p>Edit your displayed username, the email address associated with <br>
+                    your account or your profile picture for posting messages to our <br>Customer Feedback board.</p></td>
+            </tr>
+        </table>
+        <br>
+    </div>
+    <div class="content-section">
+        <div class="media">
+            <img class="rounded-circle account-img" src="{{ image_file }}">
+            <div class="media-body">
+                <h2 class="account-heading">{{ current_user.firstName }}</h2>
+                <p class="text-secondary">{{ current_user.email }}</p>
+            </div>
+            
+        </div>
+        
+    </div>
+{% endblock content %}

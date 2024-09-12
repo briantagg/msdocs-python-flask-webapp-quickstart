@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="media content-section">
+  <div class="media-body">
+    <h2>Welcome to Hemm & May Loans</h2><br>
+    <img class="rounded" src="static\images\loans.jpg" width=700>
+    <p>&nbsp;</p>
+    <h3>Need a loan for something important?</h3>
+    <p class='text-muted'>We pride ourselves on providing a large range of online financial services for all your needs.</p>
+    <br>
+    <h4>Click <a href="{{ url_for('actions.loans_apply') }}">here</a> to apply for a Personal Loan.</h4><br><br>
+  </div>
+</article>
+{% endblock content %}

@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block content %}
+
+<article class="media content-section">
+  <div class="media-body"><br>
+    <h1>Welcome to Hemm & May FAQ</h1><br>
+    <img src="static\images\faq.jpg" width=700>
+
+    <div id="accordion">
+
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              Am I automatically opted in to Online Banking?
+            </button>
+          </h5>
+        </div>
+    
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            No. You’ll only use online banking if you give permission to a regulated app or website. It’s always your choice – you need to give your explicit consent.  
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              How do I control who has access to my information?
+            </button>
+          </h5>
+        </div>
+
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div class="card-body">
+            You choose which regulated apps and websites you want to use – so you’re always in charge. You decide what information they can access, and for how long. No one gets access unless you say so.  
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              What types of account can be used for Online Banking?
+            </button>
+          </h5>
+        </div>
+
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+          <div class="card-body">
+            You can use online banking for payment accounts that you access online, such as personal and business current accounts, credit cards and online mortgage accounts.  
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="headingFour">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              Is there a charge to use Online Banking?
+            </button>
+          </h5>
+        </div>
+
+        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+          <div class="card-body">
+            Online banking is free. However, some regulated apps and websites may choose to charge you for their products and services.  
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="headingFive">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+              What regulations do providers have to meet?
+            </button>
+          </h5>
+        </div>
+
+        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+          <div class="card-body">
+            To use online banking, providers have to comply with the strict rules of the FCA or European equivalent.  
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+
+</div>
+</article>
+{% endblock content %}

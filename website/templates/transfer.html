@@ -1,0 +1,53 @@
+
+{% extends "base.html" %}
+{% block content %}
+    <article class="media content-section">
+        <div class="media-body">
+            <h2>Transfer Funds Between My Accounts</h2>
+            <br><p>Moving funds between your authorised accounts is immediate.</p>
+            <img src="static\images\transfer.jpg" width=700>
+            <form action = "/transfer" method = "POST">
+                <p>Please select the <u>source</u> account:</p>
+                <select name="from_account" id="from_account">
+                    <option value="current">Current Account     (****-*784)</option>
+                    <option value="savings">Savings Account     (****-*144)</option>
+                    <option value="investments">Investments Account     (****-*669)</option>
+                </select><br><br>
+                <p>Please select the <u>destination</u> account:</p>
+                <select name="to_account" id="to_account">
+                    <option value="savings">Savings Account     (****-*144)</option>
+                    <option value="current">Current Account     (****-*784)</option>
+                    <option value="investments">Investments Account     (****-*669)</option>
+                </select><br><br>
+        
+                <p>Enter the <u>amount</u> to transfer:</p>
+                <p><input type="text" placeholder="Amount" name="amount"></p>
+            
+            <div>
+                <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Transfer</button>
+            </div>
+            <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="deleteModalLabel">Transfer funds to selected account?</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <input class="btn btn-danger" type="submit" value="Transfer">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <br>
+        </div>
+    </article>
+    <div class="content-section">
+        <a href="{{ url_for('views.accounts') }}">Return to Account Summary</a>
+    </div>
+    <br><br>
+{% endblock %}

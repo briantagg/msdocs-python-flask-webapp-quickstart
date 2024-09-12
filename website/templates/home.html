@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+
+<article class="media content-section">
+  <div class="media-body"><br>
+    <h1>Welcome to Hemm & May Online</h1>
+    <h3>Our Services</h3>
+    <p class='text-muted'>We pride ourselves on providing a large range of online financial services for all your needs.</p>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+      <div class="col">
+        <div class="card">
+          <img src="static\images\mortgage.jpg" class="card-img-top" alt="Apply for Mortgage">
+          <div class="card-body"><br><br>
+            <h5 class="card-title">Apply for a Mortgage</h5>
+            <p class="card-text">Apply for one of our mortgages whether you're a first time buyer or looking to move to a new home. 
+              We have a range of offers to suit your needs.</p>
+            <a href="{{ url_for('views.mortgages_apply') }}" class="btn btn-primary">Apply Online</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="static\images\credit.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Apply for a Credit Card</h5>
+            <p class="card-text">Apply for one of our brand new range of credit cards with a wide range of facilities, services and points collecting systems tailored for you everyday use.</p>
+            <a href="{{ url_for('views.credit_apply') }}" class="btn btn-primary">Apply Online</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="static\images\business.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Apply for a Business Account</h5>
+            <p class="card-text">Apply for one of our business accounts to start up your new business. We have a range of personalised accounts for the day-to-day running of your finances.</p>
+            <a href="{{ url_for('views.business_apply') }}" class="btn btn-primary">Apply Online</a>
+          </div>
+        </div>
+      </div>
+    </div>
+<br><br>
+    <div class="col">
+      <div class="card" style="width:27rem;">
+        <img src="static\images\loans.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Apply for a Loan</h5>
+          <p class="card-text">Apply for one of our loans to finance anything from an extension on your home to a new car, apply now and see what offers we have for you to make your life easier.</p>
+          <a href="{{ url_for('views.loans_apply') }}" class="btn btn-primary">Apply Online</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+{% endblock content %}
