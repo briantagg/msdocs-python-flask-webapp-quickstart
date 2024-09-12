@@ -3,18 +3,18 @@
 {% block content %}
     <article class="media content-section">
         <div class="media-body">
-            <h2>Pay a Bill, Business or Person</h2>
+            <br><h2>Pay a Bill, Business or Person</h2>
             <br><p>Payment to your authorised contacts is immediate.</p>
-            <img src="static\images\pay.jpg" width=700>
+            <img src="static\images\pay.jpg" width=400>
             <br><br><h4>Transaction Details</h4>
             <form action = "/pay" method = "POST">
-                <p>Please select the <u>source</u> account:</p>
+                <p>Please select the <b>source</b> account:</p>
                 <select name="from_account" id="from_account">
                     <option value="current">Current Account     (****-*784)</option>
                     <option value="savings">Savings Account     (****-*144)</option>
                     <option value="investments">Investments Account     (****-*669)</option>
                 </select><br><br>
-                <p>Please select the <u>destination</u> account:</p>
+                <p>Please select the <b>destination</b> account:</p>
 
                 <select name="to_account" id="to_account">
                     {% for payee in payees_list %}
@@ -22,7 +22,7 @@
                     {% endfor %}
                 </select>
                 <br><br>
-                <p>Enter the <u>amount</u> to pay:</p>
+                <p>Enter the <b>amount</b> to pay:</p>
                 <p><input type="text" placeholder="Amount" name="amount"></p>
                 <div>
                     <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Make Payment</button>
@@ -50,4 +50,5 @@
     <div class="content-section">
         <a href="{{ url_for('views.accounts') }}">Return to Account Summary</a>
     </div>
+    <br><br>
 {% endblock %}

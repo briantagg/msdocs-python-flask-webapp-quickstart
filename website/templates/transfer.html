@@ -3,24 +3,24 @@
 {% block content %}
     <article class="media content-section">
         <div class="media-body">
-            <h2>Transfer Funds Between My Accounts</h2>
+            <br><h2>Transfer Funds Between My Accounts</h2>
             <br><p>Moving funds between your authorised accounts is immediate.</p>
-            <img src="static\images\transfer.jpg" width=700>
+            <img src="static\images\transfer.jpg" width=600>
             <form action = "/transfer" method = "POST">
-                <p>Please select the <u>source</u> account:</p>
+                <p>Please select the <b>source</b> account:</p>
                 <select name="from_account" id="from_account">
                     <option value="current">Current Account     (****-*784)</option>
                     <option value="savings">Savings Account     (****-*144)</option>
                     <option value="investments">Investments Account     (****-*669)</option>
                 </select><br><br>
-                <p>Please select the <u>destination</u> account:</p>
+                <p>Please select the <b>destination</b> account:</p>
                 <select name="to_account" id="to_account">
                     <option value="savings">Savings Account     (****-*144)</option>
                     <option value="current">Current Account     (****-*784)</option>
                     <option value="investments">Investments Account     (****-*669)</option>
                 </select><br><br>
         
-                <p>Enter the <u>amount</u> to transfer:</p>
+                <p>Enter the <b>amount</b> to transfer:</p>
                 <p><input type="text" placeholder="Amount" name="amount"></p>
             
             <div>
