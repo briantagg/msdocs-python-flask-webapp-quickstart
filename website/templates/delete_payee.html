@@ -1,0 +1,45 @@
+
+{% extends "base.html" %}
+{% block content %}
+    <article class="media content-section">
+        <div class="media-body">
+            <br><h2>Delete Payee</h2>
+            <br><p>Payment to your authorised contacts is immediate.</p>
+            <img src="static\images\add_payee.jpg" width=400>
+            <br><br><h4>Transaction Details</h4>
+            <form action = "/delete_payee" method = "POST">
+                
+                <p>Enter the <b>Payee Name</b> to DELETE:</p>
+                <select name="payee_name" id="payee_name">
+                    {% for payee in data['my_payees'] %} 
+                    <option value="{{payee['payee_name']}}">{{payee['payee_name']}}     (Verified)</option>
+                    {% endfor %}
+                </select>
+                <div>
+                    <br><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete Payee</button>
+                </div>
+                <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="deleteModalLabel">Delete the Payee?</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <input class="btn btn-danger" type="submit" value="Delete Payee">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <br>
+    </div>
+    </article>
+    <div class="content-section">
+        <a href="{{ url_for('actions.payees') }}">Return to My Payees List</a>
+    </div>
+    <br><br>
+{% endblock %}

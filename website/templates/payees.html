@@ -3,28 +3,23 @@
 {% block content %}
     <article class="media content-section">
         <div class="media-body">
-            <br><h2>Manage My Payees List</h2>
-            <br><p>Manage and delete your list of payees.</p>
-            <br>
+            <br><h2>My Payees List</h2>
+            <br><p>View, Add and delete payees from your list.</p>
             <form action = "/payees" method = "POST">
-                <table border="0">
+                <table align="left" class="table table-striped">
                     <tr>
-                        <td width=400><h4>Name</h4></td>
-                        <td width=300 align="center"><h4>Reference</h4></td>
-                        <td width=300 align="center"><h4>Action</h4></td>
-                    </tr>
-                    <tr>
-                        <td colspan="3"><h1><hr></h1></td>
+                        <td align="left"><h4>Name</h4></td>
+                        <td align="center"><h4>Sort-Code</h4></td>
+                        <td align="center"><h4>Account Number</h4></td>
+                        <td align="center"><h4>Reference</h4></td>
                     </tr>
 
                     {% for payee in data['my_payees'] %} 
                     <tr>
-                        <td> {{ payee['Payee_Name'] }} </td>
-                        <td width=300 align="center"> {{ payee['Payee_Ref'] }} </td>
-                        <td width=300 align="center"><div><button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button></div></td>
-                    </tr>
-                    <tr>
-                        <td colspan="3"><h1><hr></h1></td>
+                        <td align="left"> {{ payee['payee_name'] }} </td>
+                        <td align="center"> {{ payee['payee_sort_code'] }} </td>
+                        <td align="center"> {{ payee['payee_acc_number'] }} </td>
+                        <td align="center"> {{ payee['payee_ref'] }} </td>
                     </tr>
                     {% endfor %}
                     
@@ -34,7 +29,7 @@
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="deleteModalLabel">This task requires Administrator privileges. Continue?</h5>
+                      <h5 class="modal-title" id="deleteModalLabel">The selected Payee will be deleted. Continue?</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
@@ -47,13 +42,23 @@
                 </div>
               </div>
             </form>
-            <br>
         </div>
     </article>
-    <div class="content-section" style="text-align: right;">
-        <div><button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Add a new Payee</button></div>
+    <div class="content-section" style="text-align: left;">
+        <br><h4>Payee Actions</h4>
+        <br><h4>Add Payee</h4>
+        To Add a new Payee, click <a href="{{ url_for('actions.add_payee') }}">here</a>.
+        
     </div>
+
+    <div class="content-section" style="text-align: left;">
+        <br><h4>Delete Payee</h4>
+        <br>To Delete a new Payee, click <a href="{{ url_for('actions.delete_payee') }}">here</a>.
+
+    </div></p><br>
+
     <div class="content-section">
         <a href="{{ url_for('views.accounts') }}">Return to Account Summary</a>
     </div>
+    <br><br>
 {% endblock %}

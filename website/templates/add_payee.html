@@ -1,0 +1,46 @@
+
+{% extends "base.html" %}
+{% block content %}
+    <article class="media content-section">
+        <div class="media-body">
+            <br><h2>Add New Payee</h2>
+            <br><p>Payment to your authorised contacts is immediate.</p>
+            <img src="static\images\add_payee.jpg" width=400>
+            <br><br><h4>Transaction Details</h4>
+            <form action = "/add_payee" method = "POST">
+                <p>Enter the <b>Payee Name</b> to add:</p>
+                <p><input type="text" placeholder="Payee Name" name="payee_name"></p>
+                <p>Enter the <b>Sort Code</b> of the Payee:</p>
+                <p><input type="text" placeholder="Sort Code" name="sort_code"></p>
+                <p>Enter the <b>Account Number</b> of the Payee:</p>
+                <p><input type="text" placeholder="Account Number" name="account_number"></p>
+                <p>Enter the <b>Payee Reference</b> of the Payee:</p>
+                <p><input type="text" placeholder="Payee Reference" name="payee_reference"></p>
+                <div>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteModal">Add Payee</button>
+                </div>
+                <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="deleteModalLabel">Add the new Payee?</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <input class="btn btn-primary" type="submit" value="Add Payee">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <br>
+    </div>
+    </article>
+    <div class="content-section">
+        <a href="{{ url_for('actions.payees') }}">Return to My Payees List</a>
+    </div>
+    <br><br>
+{% endblock %}

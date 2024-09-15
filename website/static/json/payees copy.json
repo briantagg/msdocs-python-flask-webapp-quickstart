@@ -1,0 +1,49 @@
+{
+    "my_payees": [
+        {
+            "payee_id": "1",
+            "payee_name": "Miles Hadden",
+            "payee_ref": "MHADDEN"
+        },
+        {
+            "payee_id": "2",
+            "payee_name": "Ben Brown",
+            "payee_ref": "BROWN"
+        },
+        {
+            "payee_id": "3",
+            "payee_name": "Charleen Taylor",
+            "payee_ref": "TAYLOR-C"
+        },
+        {
+            "payee_id": "4",
+            "payee_name": "David Phillips",
+            "payee_ref": "DP100"
+        },
+        {
+            "payee_id": "5",
+            "payee_name": "Halle Brown",
+            "payee_ref": "HBROWN"
+        },
+        {
+            "payee_id": "6",
+            "payee_name": "Penny Baker",
+            "payee_ref": "BAKER9039"
+        },
+        {
+            "payee_id": "7",
+            "payee_name": "John Billett",
+            "payee_ref": "BILLETTJ"
+        },
+        {
+            "payee_id": "8",
+            "payee_name": "Ken Harding",
+            "payee_ref": "KEN_HARDING"
+        },
+        {
+            "payee_id": "9",
+            "payee_name": "Zeb Kalita",
+            "payee_ref": "ZEBK"
+        }
+   ]
+}

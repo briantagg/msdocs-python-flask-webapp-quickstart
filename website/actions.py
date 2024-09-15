@@ -219,7 +219,7 @@ def pay():
         payees_list = []
                
         for p in data['my_payees']:
-            payees_list.append(p['Payee_Name'])
+            payees_list.append(p['payee_name'])
 
         return render_template('pay.html', payees_list=payees_list, user=current_user)
 
@@ -231,7 +231,81 @@ def payees():
     json_url = os.path.join(SITE_ROOT, "static/json", "payees.json")
     data = json.load(open(json_url))
     
-    if request.method == 'POST':
-        flash('Please authorise this transaction using the link we have just sent to your chosen account.', 'success')            
+    if request.method == 'GET': # show payees
+        return render_template('payees.html', data=data, user=current_user)
 
-    return render_template('payees.html', data=data, user=current_user)
+    elif request.method == 'POST':
+        payee_name = request.form['payee_name']
+        
+        new_list = []
+        for x in data['my_payees']:
+            if x['payee_name'] != payee_name:
+                new_list.append(x)
+
+        data['my_payees'] = new_list
+
+        # save the appended data back to ["static/json/payees.json"]
+        with open(json_url, 'w') as f:
+            json.dump(data, f)
+
+        return render_template('payees.html', data=data, user=current_user)
+
+
+@actions.route("/add_payee", methods=['GET', 'POST'])
+@login_required
+def add_payee():
+
+    # build the json filename
+    SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
+    json_url = os.path.join(SITE_ROOT, "static/json", "payees.json")
+    data = json.load(open(json_url))
+    
+    if request.method == 'GET':
+        return render_template('add_payee.html', data=data, user=current_user)
+    
+    elif request.method == 'POST':
+        payee_name = request.form['payee_name']
+        payee_sort_code = request.form['sort_code']
+        payee_account_number = request.form['account_number']
+        payee_reference = request.form['payee_reference']
+
+        # append new payee data
+        data['my_payees'].append({'payee_acc_number': str(payee_account_number), 'payee_name': str(payee_name), 'payee_ref': str(payee_reference), 'payee_sort_code': str(payee_sort_code),})
+        
+        # save the appended data back to ["static/json/payees.json"]
+        with open(json_url, 'w') as f:
+            json.dump(data, f)
+
+        return render_template('payees.html', data=data, user=current_user)
+
+
+@actions.route("/delete_payee", methods=['GET', 'POST'])
+@login_required
+def delete_payee():
+
+    # build the json filename
+    SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
+    json_url = os.path.join(SITE_ROOT, "static/json", "payees.json")
+    data = json.load(open(json_url))
+    
+    if request.method == 'GET':
+        return render_template('delete_payee.html', data=data, user=current_user)
+    
+    elif request.method == 'POST':
+        payee_name = request.form['payee_name']
+
+        # append new payee data
+        #data['my_payees'].append({'payee_acc_number': str(payee_account_number), 'payee_name': str(payee_name), 'payee_ref': str(payee_reference), 'payee_sort_code': str(payee_sort_code),})
+        
+        new_list = []
+        for x in data['my_payees']:
+            if x['payee_name'] != payee_name:
+                new_list.append(x)
+
+        data['my_payees'] = new_list
+
+        # save the appended data back to ["static/json/payees.json"]
+        with open(json_url, 'w') as f:
+            json.dump(data, f)
+
+        return render_template('payees.html', data=data, user=current_user)
